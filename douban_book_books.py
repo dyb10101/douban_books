@@ -45,6 +45,17 @@ with open('hot_tags.txt', 'r') as f:
 						date = arr[2].strip()
 						price = arr[3].strip()
 					rating = li.find('span', class_='rating_nums').get_text().strip()
+
+					sid = '"' + sid.replace('"', '\'') + '"'
+					main_title = '"' + main_title.replace('"', '\'') + '"'
+					sub_title = '"' + sub_title.replace('"', '\'') + '"'
+					author = '"' + author.replace('"', '\'') + '"'
+					trans = '"' + trans.replace('"', '\'') + '"'
+					pu = '"' + pu.replace('"', '\'') + '"'
+					date = '"' + date.replace('"', '\'') + '"'
+					price = '"' + price.replace('"', '\'') + '"'
+					rating = '"' + rating.replace('"', '\'') + '"'
+
 					ol = ','.join([sid, main_title, sub_title, author, trans, pu, date, price, rating])
 					of.write(ol.encode('utf8') + '\n')
 
